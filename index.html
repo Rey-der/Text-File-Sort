@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-File-Sort-App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Reload-Button oberhalb -->
+  <div id="reload-container">
+    <button id="reload-button">Neustart</button>
+  </div>
+  
+  <!-- Topbar (jetzt ohne Suchleiste) -->
+  <div id="topbar">
+    <!-- Hier könnte z.B. ein Logo stehen -->
+  </div>
+  
+  <!-- Tab-Navigation (mit segmentiertem Hintergrund) -->
+  <div id="tabs">
+    <button class="tab-button" data-tab="texterfassung">Texterfassung</button>
+    <button class="tab-button" data-tab="ordnerverwaltung">Ordnerverwaltung</button>
+    <button class="tab-button" data-tab="mindmap">Mindmap</button>
+  </div>
+  
+  <!-- Tab-Inhalte -->
+  <div id="tab-content">
+    <!-- Tab 1: Texterfassung -->
+    <div id="texterfassung" class="tab-content">
+      <textarea id="text-input" placeholder="Text hier eingeben..."></textarea>
+      <button id="save-text">Speichern</button>
+    </div>
+    
+    <!-- Tab 2: Ordnerverwaltung -->
+    <div id="ordnerverwaltung" class="tab-content" style="display:none;">
+      <div id="view-options">
+        <div id="view-buttons">
+          <button id="list-view">Liste</button>
+          <button id="icon-view">Icons</button>
+          <button id="sort">...</button>
+        </div>
+        <button id="add-folder">Hinzufügen</button>
+      </div>
+      <!-- Suchleiste für Ordnerverwaltung (statt "Neuen Ordner hinzufügen") -->
+      <div id="folder-search">
+        <input type="text" id="folder-search-input" placeholder="Ordner suchen...">
+      </div>
+      <div id="folder-display">
+        <!-- Hier werden Ordner und gespeicherte Texte angezeigt -->
+      </div>
+      <div id="folder-container">
+        <!-- Hauptbereich Ordner -->
+      </div>
+    </div>
+    
+    <!-- Tab 3: Mindmap -->
+    <div id="mindmap" class="tab-content" style="display:none;">
+      <div id="mindmap-container">
+        <!-- Linke Mindmap-Sektion -->
+        <div id="left-mindmap" class="mindmap-section">
+          <div id="left-buttons" class="mindmap-buttons">
+            <button id="left-btn1">Anchor</button>
+            <button id="left-btn2">Bubble</button>
+            <button id="left-btn3">Text</button>
+          </div>
+          <div id="mindmap-canvas">
+            <!-- Hier kann später die Mindmap gezeichnet werden -->
+          </div>
+        </div>
+        <!-- Rechte Mindmap-Sektion -->
+        <div id="right-mindmap" class="mindmap-section">
+          <div id="right-buttons" class="mindmap-buttons">
+            <button id="right-btn1">Texts</button>
+            <button id="right-btn2">Folders</button>
+          </div>
+          <div id="mindmap-sidebar">
+            <!-- Hier werden Zugriffsoptionen angezeigt -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>

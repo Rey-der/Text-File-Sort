@@ -1,0 +1,77 @@
+Dokumentation: Text-File-Sort-App
+
+1. Projektbeschreibung
+
+Die Text-File-Sort-App ist eine Desktop-Anwendung, die markierten Text aus einem Browser erfasst und lokal speichert. Die Benutzeroberfläche ermöglicht es, diese gespeicherten Texte zu verwalten, in Ordnern zu organisieren und nach Bedarf abzurufen.
+
+2. Funktionen
+
+2.1. Kernfunktionen
+
+Text-Erfassung: Markierter Text kann durch eine Browser-Erweiterung oder ein globales Hotkey-System gespeichert werden.
+
+Speicherung: Der erfasste Text wird in einer lokalen Datei oder einer Datenbank (JSON, SQLite oder IndexedDB) gespeichert.
+
+Ordnerverwaltung: Nutzer können Ordner erstellen und gespeicherte Texte in diese einsortieren.
+
+Suchfunktion: Eine integrierte Suchleiste ermöglicht das schnelle Auffinden gespeicherter Texte.
+
+UI-Interaktion: Die gespeicherten Texte werden als Icons oder Listenelemente in einer übersichtlichen Benutzeroberfläche dargestellt.
+
+Export/Import: Möglichkeit, gespeicherte Daten zu exportieren oder zu importieren.
+
+2.2. Zusätzliche Funktionen (optional)
+
+Tagging-System: Neben Ordnern können Tags zur besseren Organisation genutzt werden.
+
+Dark/Light-Mode: Umschaltbare Designs für die Benutzerfreundlichkeit.
+
+Textbearbeitung: Eine einfache Bearbeitungsfunktion für gespeicherte Texte.
+
+Mindmap-Funktion: Nutzer können eine interaktive Mindmap erstellen, in der gespeicherte Daten visuell verbunden werden. Durch Drag & Drop lassen sich Dateien organisieren, und verschiedene Mindmap-Elemente können über Faden-Ankerpunkte miteinander verknüpft werden. Dies erleichtert die Projektarbeit und sorgt für eine bessere Übersicht.
+
+3. Technischer Aufbau
+
+3.1. Technologie-Stack
+
+Frontend: Electron.js (für die Desktop-App), HTML, CSS, JavaScript
+
+Backend (optional): Node.js mit Express (nur falls serverseitige Funktionen benötigt werden)
+
+Datenbank/Speicherung: JSON-Dateien, SQLite oder IndexedDB
+
+Browser-Interaktion: JavaScript-Erweiterung für Chrome/Firefox oder ein Bookmarklet
+
+3.2. Architektur
+
+Electron Main Process: Verwaltet Dateispeicherung, Fenster-Handling und Kommunikation mit dem Renderer-Prozess.
+
+Renderer Process: Steuert die Benutzeroberfläche und ermöglicht Nutzerinteraktionen.
+
+Datenhandling: JSON oder SQLite speichert erfasste Daten.
+
+4. Benutzerfluss
+
+Markieren von Text im Browser.
+
+Speichern des Textes durch eine Erweiterung oder Hotkey.
+
+Öffnen der Electron-App zur Verwaltung der Texte.
+
+Organisieren der Texte durch Ordner, Tags oder Sortierung.
+
+Erstellung einer Mindmap zur Visualisierung und besseren Organisation von Projekten.
+
+Abruf oder Export der Texte nach Bedarf.
+
+5. Nächste Schritte
+
+Dokumentation anpassen und finalisieren.
+
+Grundlegendes Electron-Setup mit UI erstellen.
+
+Speicherung und Ordnerverwaltung implementieren.
+
+Browser-Erweiterung oder Hotkey-System hinzufügen.
+
+Mindmap-Funktion entwickeln und integrieren.
