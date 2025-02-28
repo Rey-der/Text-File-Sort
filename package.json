@@ -1,5 +1,5 @@
 {
-  "name": "developer",
+  "name": "text-file-sort",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "electron": "^34.3.0"
   }
 }

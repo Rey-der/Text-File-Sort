@@ -2,7 +2,9 @@ Dokumentation: Text-File-Sort-App
 
 1. Projektbeschreibung
 
-Die Text-File-Sort-App ist eine Desktop-Anwendung, die markierten Text aus einem Browser erfasst und lokal speichert. Die Benutzeroberfläche ermöglicht es, diese gespeicherten Texte zu verwalten, in Ordnern zu organisieren und nach Bedarf abzurufen.
+Die Text-File-Sort-App ist eine Desktop-Anwendung, die Texte aus dem clipboard erfasst und lokal speichert.
+Die Benutzeroberfläche ermöglicht es, diese gespeicherten Texte zu verwalten,
+in Ordnern zu organisieren und nach Bedarf abzurufen.
 
 2. Funktionen
 

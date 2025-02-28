@@ -1,174 +1,368 @@
-/* Globale Einstellungen */
+/* style.css */
+
+/* LIGHT SCHEME (default) */
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --topbar-bg: gainsboro;
+  --topbar-text: black;
+  --reload-bg: lightblue;
+  --reload-button-bg: dodgerblue;
+  --reload-button-hover-bg: deepskyblue;
+  --sidebar-bg: whitesmoke;
+  --sidebar-border: silver;
+  --splitter-bg: gray;
+  --tab-bg: lightgray;
+  --tab-hover-bg: silver;
+  --tab-active-bg: darkgray;
+  --content-bg: white;
+  --mode-toggle-bg: dodgerblue;
+  --mode-toggle-hover-bg: deepskyblue;
+}
+
+/* DARK SCHEME */
+body.dark-mode {
+  --bg-color: #222;
+  --text-color: #ddd;
+  --topbar-bg: #151515;
+  --topbar-text: #fff;
+  --reload-bg: #222;
+  --reload-button-bg: #007acc;
+  --reload-button-hover-bg: #005f99;
+  --sidebar-bg: #444;
+  --sidebar-border: #ccc;
+  --splitter-bg: #666;
+  --tab-bg: #444;
+  --tab-hover-bg: #555;
+  --tab-active-bg: #666;
+  --content-bg: #333;
+  --mode-toggle-bg: #007acc;
+  --mode-toggle-hover-bg: #005f99;
+}
+
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  display: block;
+  font-size: 1em;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Reload Button Container (remove when done)*/
+#reload-container {
+  padding: 10px;
+  background: var(--reload-bg);
+  text-align: center;
+}
+
+#reload-button {
+  padding: 8px 16px;
+  border: none;
+  background: var(--reload-button-bg);
+  color: var(--text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#reload-button:hover {
+  background: var(--reload-button-hover-bg);
+}
+
+/* Topbar Logo Dark/light mode Toggle */
+#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--topbar-bg);
+  padding: 10px;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+#logo {
+  font-size: 1.2em;
+  color: var(--topbar-text);
+  position: absolute;
+  left: 155px; 
+  top: 50%;
+  transform: translateY(-50%); 
+  transition: left 0.1s;
+  white-space: nowrap; 
+  padding-left: 10px;
+}
+
+
+#mode-toggle {
+  margin-left: auto;
+}
+
+#mode-toggle button {
+  padding: 6px 12px;
+  border: none;
+  background: var(--mode-toggle-bg);
+  color: var(--topbar-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#mode-toggle button:hover {
+  background: var(--mode-toggle-hover-bg);
+}
+
+/* Folder Sidebar */
+#folder-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  background: var(--sidebar-bg);
+  color: var(--text-color);
+  padding: 10px;
+  overflow-y: auto;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.1s; 
+}
+
+/* Folder Search Bar (resizes with sidebar) */
+#folder-search {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+#folder-search-input {
+  width: 100%;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--content-bg);
+  color: var(--text-color);
+  box-shadow: inset 0 1px 1px var(--topbar-bg);
+  outline: none;
+}
+
+.dropdown-container {
+  width: 100%;
+  position: relative;
+}
+
+.dropdown-container .dropdown-content {
+  padding-left: 20px;
+}
+
+/*Style for the Dropdown buttons*/
+.dropdown-btn {
+  margin-top: 5px;
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
+  padding: 2px 5px; 
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-btn:hover {
+  background-color: var(--tab-hover-bg);
+}
+
+.dropdown-content {
+  display: none;
+  background-color: var(--sidebar-bg);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: none;
+}
+
+/* For testing only: */
+/*.dropdown-content.active {
+  display: block !important;
+}
+
+/*Style for Dropdown links*/
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 2px 5px;
+  text-decoration: none;
+  display: block;
+    font-size: 0.8em;
+}
+
+
+.dropdown-content a:hover{
+  border-radius: 5px;
+  background-color: var(--tab-hover-bg);
+}
+
+#folder-box {
+  flex: 1;
+  overflow-y: auto;
+  position:relative;
+}
+
+#folder-display{
+    flex:1;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-  }
-  
-  /* Reload-Button Container */
-  #reload-container {
-    padding: 10px;
-    background: #222;
-    text-align: center;
-  }
-  
-  #reload-button {
-    padding: 8px 16px;
-    border: none;
-    background: #007acc;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  #reload-button:hover {
-    background: #005f99;
-  }
-  
-  /* Tab-Navigation mit segmentiertem Hintergrund */
-  #tabs {
-    display: flex;
-    background: #444;
-    padding: 5px;
-    flex: 0 0 auto;
-  }
-  
-  .tab-button {
-    flex: 1;
-    padding: 10px;
-    background: #444;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-right: 1px solid #333; /* Vertikale Trennlinie */
-  }
-  
-  .tab-button:last-child {
-    border-right: none;
-  }
-  
-  .tab-button:hover {
-    background: #555;
-  }
-  
-  .tab-button.active {
-    background: #666;
-  }
-  
-  /* Inhalt der Tabs mit Scrollbar (und extra 40px unten) */
-  #tab-content {
-    flex: 1 1 auto;
-    padding: 20px;
-    overflow-y: scroll;
-    padding-bottom: 40px;
-  }
-  
-  /* Texterfassung */
-  #texterfassung textarea {
-    width: 100%;
-    height: 200px;
-    padding: 10px;
-    margin-bottom: 10px;
-    resize: vertical;
-  }
-  
-  /* Ordnerverwaltung */
-  #ordnerverwaltung #view-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  #view-buttons button {
-    margin-right: 5px;
-  }
-  
-  #ordnerverwaltung #add-folder {
-    align-items: right;
-  }
-  
-  #folder-search {
-    margin-bottom: 10px;
-  }
-  
-  #folder-search input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  #folder-display {
-    margin-bottom: 10px;
-  }
-  
-  #folder-container {
-    flex: 3;
-    border: 1px solid #ccc;
-    min-height: 300px;
-    margin-top: 10px;
-    padding: 10px;
-  }
-  
-  /* Mindmap */
-  #mindmap-container {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-  }
-  
-  .mindmap-section {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #left-mindmap {
-    flex: 3;
-    margin-right: 10px;
-  }
-  
-  #right-mindmap {
-    flex: 1;
-  }
-  
-  .mindmap-buttons {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 5px;
-  }
-  
-  #mindmap-canvas {
-    flex: 1;
-    border: 1px solid #ccc;
-    min-height: 300px;
-    padding: 10px;
-  }
-  
-  #mindmap-sidebar {
-    flex: 1;
-    border: 1px solid #ccc;
-    padding: 10px;
-    min-height: 300px;
-  }
-  
-  /* Responsive Anpassungen */
-  @media (max-width: 768px) {
-    #mindmap-container {
-      flex-direction: column;
-    }
-  
-    #mindmap-canvas,
-    #mindmap-sidebar {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-  }
-  
+}
+
+#folder-content{
+  flex: 1; 
+  display: flex;
+  flex-direction: column; 
+}
+#start-end-line {
+  border-bottom: 1px solid var(--sidebar-border);
+  margin: 0 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+/* Main Container */
+#main-container {
+  margin-left: 155px;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  transition: margin-left 0.1s;
+}
+
+/* Splitter */
+#splitter {
+  position: fixed;
+  top: 0;
+  left: 150px;
+  bottom: 0;
+  width: 5px;
+  cursor: ew-resize;
+  background: var(--splitter-bg);
+  z-index: 99;
+  transition: left 0.1s; 
+}
+
+/* Content Area */
+#content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--content-bg);
+}
+
+/* Tab Navigation */
+#tabs {
+  display: flex;
+  background: var(--tab-bg);
+  padding: 5px;
+  flex: 0 0 auto;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  background: var(--tab-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.3s;
+  border-right: 1px solid var(--sidebar-border);
+}
+
+.tab-button:last-child {
+  border-right: none;
+}
+
+.tab-button:hover {
+  background: var(--tab-hover-bg);
+}
+
+.tab-button.active {
+  background: var(--tab-active-bg);
+}
+
+/* Tab Content */
+#tab-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: scroll;
+  padding-bottom: 40px;
+}
+
+/* Clipboard Tab */
+#clipboard-detection textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  background-color: var(--content-bg);
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.adjustable-line {
+  width: 100%;
+  height: 1px; 
+  background-color: var(--sidebar-border);
+  margin-top: 10px; 
+  margin-bottom: 10px;
+  border: none;
+}
+
+/* Mindmap Styles */
+#mindmap-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.mindmap-section {
+  display: flex;
+  flex-direction: column;
+}
+
+#left-mindmap {
+  flex: 3;
+  margin-right: 10px;
+}
+
+#right-mindmap {
+  flex: 1;
+}
+
+.mindmap-buttons {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+#mindmap-canvas {
+  flex: 1;
+  border: 1px solid var(--sidebar-border);
+  min-height: 300px;
+  padding: 10px;
+}
+
+#mindmap-sidebar {
+  flex: 1;
+  border: 1px solid var(--sidebar-border);
+  padding: 10px;
+  min-height: 300px;
+}
