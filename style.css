@@ -317,6 +317,75 @@ body {
   resize: vertical;
 }
 
+/* Add to existing styles */
+.clipboard-container {
+  margin: 10px 0;
+  padding: 15px;
+  background: var(--content-bg);
+  border: 1px solid var(--sidebar-border);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clipboard-text {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+  border: 1px solid var(--sidebar-border);
+  border-radius: 3px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  resize: vertical;
+}
+
+.clipboard-image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 3px;
+  background: var(--bg-color);
+  display: block;
+  align-self: center;
+}
+
+.clipboard-timestamp {
+  font-size: 0.8em;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+/* Add styles for image container */
+.clipboard-container {
+  margin: 10px 0;
+  padding: 15px;
+  background: var(--content-bg);
+  border: 1px solid var(--sidebar-border);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Update button styles for image actions */
+.clipboard-container button {
+  align-self: flex-end;
+  margin-top: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  background: var(--mode-toggle-bg);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--mode-toggle-hover-bg);
+}
+
 .adjustable-line {
   width: 100%;
   height: 1px; 
@@ -324,6 +393,61 @@ body {
   margin-top: 10px; 
   margin-bottom: 10px;
   border: none;
+}
+
+.image-info {
+  font-size: 0.9em;
+  color: var(--text-color);
+  opacity: 0.8;
+  text-align: center;
+}
+
+.manual-input-section {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.clipboard-content-section {
+  background: var(--bg-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
+.section-header h3 {
+  margin: 0;
+  color: var(--text-color);
+}
+
+#clipboard-history {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+}
+
+#refresh-clipboard {
+  padding: 5px 10px;
+  background: var(--mode-toggle-bg);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#refresh-clipboard:hover {
+  background: var(--mode-toggle-hover-bg);
 }
 
 /* Mindmap Styles */
@@ -365,4 +489,27 @@ body {
   border: 1px solid var(--sidebar-border);
   padding: 10px;
   min-height: 300px;
+}
+
+
+/* Add to existing mindmap styles */
+.mindmap-anchor, .mindmap-bubble, .mindmap-text {
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--content-bg);
+  border: 1px solid var(--sidebar-border);
+  min-width: 100px;
+  text-align: center;
+}
+
+.mindmap-bubble {
+  border-radius: 50%;
+}
+
+.mindmap-anchor {
+  border-style: dashed;
+}
+
+#mindmap-canvas {
+  position: relative;
 }

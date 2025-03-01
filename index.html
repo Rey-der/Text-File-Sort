@@ -45,12 +45,30 @@
       </div>
 
       <div id="tab-content">
+        <!-- Fix nested clipboard section -->
         <div id="clipboard-detection" class="tab-content">
-          <textarea id="text-input" placeholder="Enter text here..."></textarea>
-          <button id="save-text">Save</button>
-           <p id="file-content-display"></p>
+          <div class="clipboard-content-section">
+            <div class="section-header">
+              <h3>Clipboard History</h3>
+              <button id="refresh-clipboard">Refresh</button>
+            </div>
+            <div id="clipboard-history">
+              <!-- Clipboard items will be inserted here dynamically -->
+            </div>
+          </div>
           <div class="adjustable-line"></div>
+          <p id="file-content-display"></p>
         </div>
+
+        <!-- Keep mindmap section as is -->
+        <div id="mindmap" class="tab-content" style="display:none;">
+          ...existing code...
+        </div>
+      </div>
+            
+            <div class="adjustable-line"></div>
+            <p id="file-content-display"></p>
+          </div>
 
         <div id="mindmap" class="tab-content" style="display:none;">
           <div id="mindmap-container">
