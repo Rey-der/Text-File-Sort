@@ -30,3 +30,5 @@ my-electron-app/
 ├── renderer.js        # Renderer script for UI interactions (tab switching, reload, etc.)
 ├── style.css          # CSS styles for the app
 └── assets/            # Optional: Images, icons, and other static files
+
+##Prototype with Risk issues! Open ipcMain.on, XSS attack, innerHTML! Use on own digression!
