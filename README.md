@@ -12,24 +12,25 @@ This application handles clipboard data, file storage, and text sorting. While f
 📌 Overview
 
 The Text-File-Sort App is an Electron-based desktop application designed to:  
-✅ Capture selected text (e.g., from the clipboard)  
+✅ Capture selected text, Images and Links(e.g., from the clipboard)  
 ✅ Store it locally  
 ✅ Organize it in a unique way  
 
 With a responsive UI divided into different tabs, the app offers:  
   
-    📝 Text Capture: Capture and edit text in its own tab.  
+    📝 Text Capture and Image: Capture and edit text in its own tab, Capture Image and safe it localy.  
     📂 Folder Management: Organize saved files into folders, search for specific   folders, and sort them in various ways.  
     🧠 Mindmap Integration: Visually organize your saved data through an   interactive mindmap with drag-and-drop functionality.  
 
 ⚙️ Features  
   
-✅ Clipboard/Text Capture – Capture selected text via a browser extension or copy-paste.  
-✅ Local Storage – Save the captured data in files or databases (e.g., JSON, SQLite, IndexedDB).  
-✅ Unique Sorting – Manage your files using a flexible folder system with sorting options.  
-✅ Mindmap Visualization – Arrange your data visually in a mindmap with interactive controls.  
-✅ Responsive Design – The UI dynamically adjusts to different window sizes.  
-✅ In-App Reload – A dedicated button allows you to restart the app without   reopening the terminal.  
+✅ 100% - Clipboard/Text Capture – Capture selected text via a browser extension or copy-paste.  
+✅ 80% - Clipboard/Image Capture – Capture selected image via a browser extension or copy-paste.  
+✅ 100% -Local Storage – Save the captured data in files or databases (e.g., JSON, SQLite, IndexedDB).  
+✅ 30% -Unique Sorting – Manage your files using a flexible folder system with sorting options.  
+✅ 30% -Mindmap Visualization – Arrange your data visually in a mindmap with interactive controls.  
+✅ 100% -Responsive Design – The UI dynamically adjusts to different window sizes.  
+✅ 100% -In-App Reload – A dedicated button allows you to restart the app without   reopening the terminal.  
 🛠️ Project Structure  
 
 my-electron-app/
